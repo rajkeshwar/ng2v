@@ -143,7 +143,7 @@ function createRollupBundle(format: string, outFile: string) {
   let rollupGenerateOptions = {
     // Keep the moduleId empty because we don't want to force developers to a specific moduleId.
     moduleId: '',
-    moduleName: 'ng.md2',
+    moduleName: 'ng.ng2v',
     banner: LICENSE_BANNER,
     format: format,
     dest: outFile,

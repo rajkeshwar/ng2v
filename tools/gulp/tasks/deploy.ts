@@ -15,7 +15,7 @@ const rename = require('gulp-rename');
 
 // Prepare rollup
 task('rollup:prepare', ['aot:build'], () => {
-  return src('md2/**/*', { cwd: join(DIST_ROOT, '**') })
+  return src('ng2v/**/*', { cwd: join(DIST_ROOT, '**') })
     .pipe(dest(join(DIST_ROOT, 'node_modules')));
 });
 
@@ -53,7 +53,7 @@ task(':release:commit', () => {
   let version = JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
   return src('.')
     .pipe(git.add())
-    .pipe(git.commit('Released MD2@' + version));
+    .pipe(git.commit('Released NG2V@' + version));
 });
 
 // release push
@@ -93,7 +93,7 @@ task('release', (callback: any) => {
       if (error) {
         console.log(error.message);
       } else {
-        console.log('Md2 Released Successfully');
+        console.log('NG2V Released Successfully');
       }
       callback(error);
     });

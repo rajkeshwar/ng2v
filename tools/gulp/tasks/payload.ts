@@ -9,7 +9,7 @@ import {openFirebaseDashboardDatabase} from '../util/firebase';
 // There are no type definitions available for these imports.
 const uglifyJs = require('uglify-js');
 
-const BUNDLE_PATH = join(DIST_COMPONENTS_ROOT, 'bundles', 'md2.umd.js');
+const BUNDLE_PATH = join(DIST_COMPONENTS_ROOT, 'bundles', 'ng2v.umd.js');
 
 /** Task which runs test against the size of whole library. */
 task('payload', ['build:release'], () => {

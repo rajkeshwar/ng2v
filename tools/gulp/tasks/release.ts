@@ -46,7 +46,7 @@ function _execNpmPublish(label: string): Promise<{}> {
   }
 
   process.chdir(packageDir);
-  console.log(`Publishing md2...`);
+  console.log(`Publishing ng2v...`);
 
   const command = 'npm';
   const args = ['publish', '--access', 'public', label ? `--tag` : undefined, label || undefined];
@@ -69,7 +69,7 @@ function _execNpmPublish(label: string): Promise<{}> {
       if (code == 0) {
         resolve();
       } else {
-        reject(new Error(`Md2 did not publish, status: ${code}.`));
+        reject(new Error(`Ng2v did not publish, status: ${code}.`));
       }
     });
   });

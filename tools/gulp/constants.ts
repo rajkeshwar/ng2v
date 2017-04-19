@@ -6,7 +6,7 @@ export const PROJECT_ROOT = join(__dirname, '../..');
 export const SOURCE_ROOT = join(PROJECT_ROOT, 'src');
 
 export const DIST_ROOT = join(PROJECT_ROOT, 'dist');
-export const DIST_COMPONENTS_ROOT = join(DIST_ROOT, 'md2');
+export const DIST_COMPONENTS_ROOT = join(DIST_ROOT, 'ng2v');
 
 export const COVERAGE_RESULT_FILE = join(DIST_ROOT, 'coverage', 'coverage-summary.json');
 
@@ -18,8 +18,8 @@ export const HTML_MINIFIER_OPTIONS = {
 };
 
 export const LICENSE_BANNER = `/**
-  * @license Md2 v${MATERIAL_VERSION}
-  * Copyright (c) 2017 Md2, Inc. https://dharmeshpipariya.github.io/md2/
+  * @license Ng2v v${MATERIAL_VERSION}
+  * Copyright (c) 2017 Ng2v, Inc. https://rajkeshwar.github.io/ng2v/
   * License: MIT
   */`;
 
