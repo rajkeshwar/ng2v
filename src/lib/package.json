@@ -1,6 +1,6 @@
 {
   "name": "ng2v",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Angular2 based components",
   "main": "./ng2v.umd.js",
   "module": "./index.js",

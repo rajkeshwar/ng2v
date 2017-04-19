@@ -11,7 +11,7 @@ const bump = require('gulp-bump');
 const git = require('gulp-git');
 const changelog = require('gulp-conventional-changelog');
 const rename = require('gulp-rename');
-// const releaser = require('conventional-github-releaser');
+const releaser = require('conventional-github-releaser');
 
 // Prepare rollup
 task('rollup:prepare', ['aot:build'], () => {
@@ -71,24 +71,24 @@ task(':release:tag', (cb: any) => {
 });
 
 // release
-// task('github-release', function (done: any) {
-//  releaser({
-//    type: 'oauth',
-//    token: '0126af95c0e2d9b0a7c78738c4c00a860b04acc8'
-// change this to your own GitHub token or use an environment variable
-//  }, {
-//      preset: 'angular' // Or to any other commit message convention you use.
-//    }, done);
-// });
+task('github-release', (done: any) => {
+ releaser({
+    type: 'oauth',
+    token: '73ff5afd38847207ac2a0ef128b8e9e9f0161c59'
+    // change this to your own GitHub token or use an environment variable
+   }, {
+     preset: 'angular' // Or to any other commit message convention you use.
+   }, done);
+});
 
 task('release', (callback: any) => {
   gulpRunSequence(
     ':release:version',
     ':release:changelog',
-    // ':release:commit',
-    // ':release:push',
-    // ':release:tag',
-    // 'github-release',
+    ':release:commit',
+    ':release:push',
+    ':release:tag',
+    'github-release',
     function (error: any) {
       if (error) {
         console.log(error.message);
