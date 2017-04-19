@@ -21,7 +21,7 @@ System.config({
           'libs/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
     '@angular/platform-browser-dynamic':
       'libs/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-    'md2': 'md2/bundles/md2.umd.js'
+    'ng2v': 'ng2v/bundles/ng2v.umd.js'
   },
   packages: {
     // Thirdparty barrels.

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Md2Dialog } from 'md2';
+import { Md2Dialog } from 'ng2v';
 
 @Component({
   selector: 'dialog-demo',

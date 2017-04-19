@@ -67,14 +67,14 @@ task(':build:components:scss', sassBuildTask(DIST_COMPONENTS_ROOT, COMPONENTS_DI
 /** Builds a ES6 bundle for all components. */
 task(':build:components:rollup:esm', () => {
   return src(path.join(DIST_COMPONENTS_ROOT, 'index.js'))
-    .pipe(createRollupBundle('es', 'md2.js'))
+    .pipe(createRollupBundle('es', 'ng2v.js'))
     .pipe(dest(path.join(DIST_COMPONENTS_ROOT, 'bundles')));
 });
 
 /** Builds a UMD bundle (ES5) for all components. */
 task(':build:components:rollup:umd', () => {
   return src(path.join(DIST_COMPONENTS_ROOT, 'index.js'))
-    .pipe(createRollupBundle('umd', 'md2.umd.js'))
+    .pipe(createRollupBundle('umd', 'ng2v.umd.js'))
     .pipe(dest(path.join(DIST_COMPONENTS_ROOT, 'bundles')));
 });
 

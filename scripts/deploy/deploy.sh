@@ -22,7 +22,7 @@ fi
 SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into deploy/
-git clone https://dharmeshpipariya:$GH_TOKEN@github.com/dharmeshpipariya/md2.git --branch=gh-pages deploy
+git clone https://rajkeshwar:$GH_TOKEN@github.com/rajkeshwar/ng2v.git --branch=gh-pages deploy
 
 # Clean deploy existing contents
 rm -rf deploy/**/* || exit 0
@@ -34,8 +34,8 @@ $(npm bin)/gulp deploy
 
 # Configure cloned repo.
 cd deploy
-git config --global user.email "pipariyadharmesh@gmail.com"
-git config --global user.name "Dharmesh Pipariya"
+git config --global user.email "rajkeshwar.pd@gmail.com"
+git config --global user.name "rajkeshwar"
 
 # Check if there are any changes or not.
 if [ -z `git diff --exit-code` ]; then

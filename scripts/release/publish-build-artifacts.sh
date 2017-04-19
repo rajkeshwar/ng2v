@@ -8,7 +8,7 @@ set -e -o pipefail
 # Go to the project root directory
 cd $(dirname $0)/../..
 
-buildDir="dist/md2"
+buildDir="dist/ng2v"
 buildVersion=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
 
 commitSha=$(git rev-parse --short HEAD)
@@ -16,8 +16,8 @@ commitAuthorName=$(git --no-pager show -s --format='%an' HEAD)
 commitAuthorEmail=$(git --no-pager show -s --format='%ae' HEAD)
 commitMessage=$(git log --oneline -n 1)
 
-repoName="md2-builds"
-repoUrl="https://github.com/dharmeshpipariya/md2-builds.git"
+repoName="ng2v-builds"
+repoUrl="https://github.com/rajkeshwar/ng2v-builds.git"
 repoDir="tmp/$repoName"
 
 # Create a release of the current repository.

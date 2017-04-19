@@ -5,7 +5,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoApp} from './demo-app/demo-app';
 import {RouterModule} from '@angular/router';
-import {Md2Module} from 'md2';
+import {Md2Module} from 'ng2v';
 import {DEMO_APP_ROUTES} from './demo-app/routes';
 import {AccordionDemo} from './accordion/accordion-demo';
 import {AutocompleteDemo} from './autocomplete/autocomplete-demo';

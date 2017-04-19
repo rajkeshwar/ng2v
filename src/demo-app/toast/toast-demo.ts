@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Md2Toast } from 'md2';
+import { Md2Toast } from 'ng2v';
 
 @Component({
   selector: 'toast-demo',

@@ -9,8 +9,8 @@
 # so we redirect the stderr output to /dev/null since we don't care.
 NPM_USER=$(npm whoami 2> /dev/null)
 
-if [ "${NPM_USER}" != "md2" ]; then
-  echo "You must be logged in as 'md2' to publish. Use 'npm login'."
+if [ "${NPM_USER}" != "ng2v" ]; then
+  echo "You must be logged in as 'ng2v' to publish. Use 'npm login'."
   exit
 fi
 

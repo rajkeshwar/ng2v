@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Publish md2 docs assets to the md2-docs-content repo
-# dharmeshpipariya.github.io/md2 will pull from this assets repo to get the latest docs
+# rajkeshwar.github.io/ng2v will pull from this assets repo to get the latest docs
 
 cd "$(dirname $0)/../../"
 
 docsPath="./dist/docs"
-repoPath="/tmp/md2-docs-content"
-repoUrl="https://github.com/dharmeshpipariya/md2-docs-content"
+repoPath="/tmp/ng2v-docs-content"
+repoUrl="https://github.com/rajkeshwar/ng2v-docs-content"
 examplesSource="./dist/docs/examples"
 
 # If the docs directory is not present, generate docs

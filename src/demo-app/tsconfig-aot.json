@@ -14,8 +14,8 @@
       "../node_modules/@types/!(node)"
     ],
     "paths": {
-      "md2": [
-        "./md2"
+      "ng2v": [
+        "./ng2v"
       ]
     }
   },
