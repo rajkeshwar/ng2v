@@ -24,16 +24,16 @@ View all the directives in action at https://ng-bootstrap.github.io
 ## Installation
 After installing the above dependencies, install `ng-bootstrap` via:
 ```shell
-npm install --save @ng-bootstrap/ng-bootstrap
+npm install --save @ng2v/ng2v-components
 ```
 Once installed you need to import our main module:
 ```js
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng2v/ng2v-components';
 ```
 The only remaining part is to list the imported module in your application module. The exact method will be slightly
 different for the root (top-level) module for which you should end up with the code similar to (notice `NgbModule.forRoot()`):
 ```js
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng2v/ng2v-components';
 
 @NgModule({
   declarations: [AppComponent, ...],
@@ -47,7 +47,7 @@ export class AppModule {
 Other modules in your application can simply import `NgbModule`:
 
 ```js
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng2v/ng2v-components';
 
 @NgModule({
   declarations: [OtherComponent, ...],
@@ -63,7 +63,7 @@ If you are using SystemJS, you should also adjust your configuration to point to
 In your systemjs config file, `map` needs to tell the System loader where to look for `ng-bootstrap`:
 ```js
 map: {
-  '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
+  '@ng2v/ng2v-components': 'node_modules/@ng2v/ng2v-components/bundles/ng-bootstrap.js',
 }
 ```
 ## Supported browsers

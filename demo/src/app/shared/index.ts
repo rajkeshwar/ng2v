@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {JsonpModule} from '@angular/http';
 
-import {Ng2vModule} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2vModule} from '@ng2v/ng2v-components';
 
 import {ContentWrapper} from './content-wrapper/content-wrapper.component';
 import {SideNavComponent} from './side-nav/side-nav.component';

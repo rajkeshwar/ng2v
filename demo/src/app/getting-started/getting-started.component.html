@@ -22,11 +22,11 @@
   </h3>
   <p>After installing the above dependencies, install 
     <code>ng2v</code> via: <br>
-    <code>npm install --save @ng2v/ng2v</code>
+    <code>npm install --save @@ng2v/ng2v-components</code>
   </p>
 
   <p>Once installed you need to import our main module.</p>
-  <pre>import &#123;Ng2vModule} from '@ng2v/ng2v';</pre>
+  <pre>import &#123;Ng2vModule} from '@ng2v/ng2v-components';</pre>
   <p>
     The only remaining part is to list the imported module in your root module and any additional application modules that make use
     use of the components in this library. The exact method will be slightly different for the root (top-level) module for which you
@@ -43,7 +43,7 @@ export class AppModule &#123;
 }</pre>
 
   <p>Other modules in your application can simply import <code>Ng2vModule</code>:</p>
-  <pre>import &#123;Ng2vModule} from '@ng2v/ng2v';
+  <pre>import &#123;Ng2vModule} from '@ng2v/ng2v-components';
 
 @NgModule(&#123;
   declarations: [OtherComponent, ...],

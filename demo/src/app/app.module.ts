@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {Ng2vModule} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2vModule} from '@ng2v/ng2v-components';
 
 import {DefaultComponent} from './default';
 import {GettingStarted} from './getting-started';

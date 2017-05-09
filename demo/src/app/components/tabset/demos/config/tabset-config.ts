@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Ng2vTabsetConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2vTabsetConfig} from '@ng2v/ng2v-components';
 
 @Component({
   selector: 'ng2vd-tabset-config',

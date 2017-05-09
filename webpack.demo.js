@@ -57,7 +57,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = {
     path: root('demo', 'dist'),
-    publicPath: '/',
+    publicPath: '',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js'
   };
@@ -72,7 +72,7 @@ module.exports = function makeWebpackConfig() {
     extensions: ['.ts', '.js', '.css', '.scss', '.html'],
 
     alias: {
-      '@ng-bootstrap/ng-bootstrap': root('src/index.ts')
+      '@ng2v/ng2v-components': root('src/index.ts')
     }
   };
 

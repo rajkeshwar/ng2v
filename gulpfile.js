@@ -258,6 +258,11 @@ gulp.task('clean:demo', function() { return del('demo/dist'); });
 
 gulp.task('clean:demo-cache', function() { return del('.publish/'); });
 
+gulp.task('copy:imgs', function() { 
+  return gulp.src('demo/src/public/img/*')
+    .pipe(gulp.dest('demo/dist/img/'))
+});
+
 gulp.task(
     'demo-server', ['generate-docs', 'generate-plunks'],
     shell.task([`webpack-dev-server --port ${docsConfig.port} --config webpack.demo.js --inline --progress`]));
@@ -266,7 +271,9 @@ gulp.task(
 //     'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks'],
 //     shell.task(['webpack --config webpack.demo.js --progress --profile --bail'], {env: {MODE: 'build'}}));
 
-gulp.task('build:demo', ['clean:demo', 'generate-docs', 'generate-plunks']);
+gulp.task(
+  'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks', 'copy:imgs'],
+  shell.task(['webpack --config webpack.demo.js --progress --profile --bail']));
 
 gulp.task(
     'demo-server:aot', ['generate-docs', 'generate-plunks'],
@@ -276,7 +283,7 @@ gulp.task(
 
 gulp.task('demo-push', function() {
   return gulp.src(PATHS.demoDist)
-      .pipe(ghPages({remoteUrl: "https://github.com/ng2v/ng2v.github.io.git", branch: "master"}));
+      .pipe(ghPages({remoteUrl: "https://github.com/rajkeshwar/ng2v.git", branch: "gh-pages"}));
 });
 
 // Public Tasks

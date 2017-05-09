@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Ng2vAccordionConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2vAccordionConfig} from '@ng2v/ng2v-components';
 
 @Component({
   selector: 'ng2vd-accordion-config',
