@@ -56,9 +56,8 @@ function getButton(nativeEl: HTMLElement) {
 }
 
 describe('ng2v-tabset', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [TestComponent], imports: [Ng2vTabsetModule.forRoot()]});
-  });
+  beforeEach(
+      () => { TestBed.configureTestingModule({declarations: [TestComponent], imports: [Ng2vTabsetModule.forRoot()]}); });
 
   it('should initialize inputs with default values', () => {
     const defaultConfig = new Ng2vTabsetConfig();

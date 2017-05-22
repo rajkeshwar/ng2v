@@ -1,0 +1,12 @@
+
+<div style="width:300px">
+    <ng2v-multiselect 
+        [options]="options" 
+        [texts]="{'defaultTitle':'Select cities'}"
+        (dropdownOpen)="dropdownOpen($event)"
+        (dropdownClosed)="dropdownClosed()"
+        (searchValueChange)="searchValueChange($event)"
+        (clearFilter)="clearFilter()"
+        [(ngModel)]="selectedValues">
+    </ng2v-multiselect>
+</div>

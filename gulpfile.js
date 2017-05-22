@@ -5,6 +5,8 @@ var ddescribeIit = require('gulp-ddescribe-iit');
 var shell = require('gulp-shell');
 var ghPages = require('gulp-gh-pages');
 var gulpFile = require('gulp-file');
+var replace = require('gulp-replace-task');
+var rename = require('gulp-rename');
 var del = require('del');
 var clangFormat = require('clang-format');
 var gulpFormat = require('gulp-clang-format');
@@ -44,6 +46,32 @@ function webpackCallBack(taskName, gulpDone) {
   }
 }
 
+const PATTERNS = [
+  { match: /Ngb/g, replacement: () => 'Ng2v' },
+  { match: /ngb/g, replacement: () => 'ng2v' },
+  { match: /@ng-bootstrap\/ng-bootstrap/g, replacement: () => '@ng2v/ng2v-components' },
+  { match: /github.com\/ng-bootstrap\/ng-bootstrap/g, replacement: () => 'github.com/rajkeshwar/ng2v' }
+];
+
+gulp.task('clean:replace', () => { del('src/'); del('demo/'); });
+gulp.task('build:replace', ['replace:src', 'replace:demo']);
+
+// For replacing in files
+gulp.task('replace:src', () => {
+  return gulp.src('bk-src/**/*.*')
+    .pipe(replace({ patterns: PATTERNS }))
+    .pipe(rename( path => {
+        path.basename = path.basename.replace(/ngb/, 'ng2v');
+    }))
+    .pipe(gulp.dest('src'));
+});
+
+gulp.task('replace:demo', () => {
+  return gulp.src('bk-demo/**/*.*')
+    .pipe(replace({ patterns: PATTERNS }))
+    .pipe(gulp.dest('demo'));
+});
+
 // Transpiling & Building
 
 gulp.task('clean:build', function() { return del('dist/'); });
@@ -55,6 +83,14 @@ gulp.task('ngc', function(cb) {
     del('./dist/waste');
     cb();
   }).stdout.on('data', function(data) { console.log(data); });
+});
+
+gulp.task('filerename', () => {
+  gulp.src('src/*.ts')
+    .pipe(rename( path => {
+        path.basename = path.basename.replace(/ngb/, 'ng2v');
+    }))
+    .pipe(gulp.dest('f-rename'));
 });
 
 gulp.task('umd', function(cb) {
@@ -77,7 +113,7 @@ gulp.task('umd', function(cb) {
   webpack(
       {
         entry: './temp/index.js',
-        output: {filename: 'dist/bundles/ng2v.js', library: 'ng2v-components', libraryTarget: 'umd'},
+        output: {filename: 'dist/bundles/ng2v-components.js', library: 'ngb', libraryTarget: 'umd'},
         devtool: 'source-map',
         externals: [
           {
@@ -204,7 +240,7 @@ gulp.task('saucelabs', ['build:tests'], function(done) {
 // Formatting
 
 gulp.task('lint', function() {
-  return gulp.src([PATHS.src, PATHS.demo, '!demo/src/api-docs.ts'])
+  return gulp.src([PATHS.src, PATHS.demo, '!demo/src/api-docs.ts', '!src/datepicker/datepicker.spec.ts'])
       .pipe(tslint({configuration: require('./tslint.json'), formatter: 'prose'}))
       .pipe(tslint.report({summarizeFailureOutput: true}));
 });
@@ -217,7 +253,7 @@ gulp.task('check-format', function() {
 gulp.task('enforce-format', function() {
   return doCheckFormat().on('warning', function(e) {
     console.log("ERROR: You forgot to run clang-format on your change.");
-    console.log("See https://github.com/ng-bootstrap/ng-bootstrap/blob/master/DEVELOPER.md#clang-format");
+    console.log("See https://github.com/rajkeshwar/ng2v/blob/master/DEVELOPER.md#clang-format");
     process.exit(1);
   });
 });
@@ -258,11 +294,6 @@ gulp.task('clean:demo', function() { return del('demo/dist'); });
 
 gulp.task('clean:demo-cache', function() { return del('.publish/'); });
 
-gulp.task('copy:imgs', function() { 
-  return gulp.src('demo/src/public/img/*')
-    .pipe(gulp.dest('demo/dist/img/'))
-});
-
 gulp.task(
     'demo-server', ['generate-docs', 'generate-plunks'],
     shell.task([`webpack-dev-server --port ${docsConfig.port} --config webpack.demo.js --inline --progress`]));
@@ -271,9 +302,7 @@ gulp.task(
 //     'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks'],
 //     shell.task(['webpack --config webpack.demo.js --progress --profile --bail'], {env: {MODE: 'build'}}));
 
-gulp.task(
-  'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks', 'copy:imgs'],
-  shell.task(['webpack --config webpack.demo.js --progress --profile --bail']));
+gulp.task('build:demo', ['clean:demo', 'generate-docs', 'generate-plunks']);
 
 gulp.task(
     'demo-server:aot', ['generate-docs', 'generate-plunks'],
@@ -283,7 +312,7 @@ gulp.task(
 
 gulp.task('demo-push', function() {
   return gulp.src(PATHS.demoDist)
-      .pipe(ghPages({remoteUrl: "https://github.com/rajkeshwar/ng2v.git", branch: "gh-pages"}));
+      .pipe(ghPages({remoteUrl: "https://github.com/rajkeshwar/rajkeshwar.github.io.git", branch: "master"}));
 });
 
 // Public Tasks
@@ -291,6 +320,10 @@ gulp.task('clean', ['clean:build', 'clean:tests', 'clean:demo', 'clean:demo-cach
 
 gulp.task('build', function(done) {
   runSequence('lint', 'enforce-format', 'ddescribe-iit', 'test', 'clean:build', 'ngc', 'umd', 'npm', done);
+});
+
+gulp.task('ng2v:build', function(done) {
+  runSequence('clean:build', 'ngc', 'umd', 'npm', done);
 });
 
 gulp.task(

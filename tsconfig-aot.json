@@ -12,7 +12,7 @@
     "sourceMap": true,
     "baseUrl": "./node_modules",
     "paths": {
-      "@ng2v/ng2v-components": ["../src/index"]
+      "@ng-bootstrap/ng-bootstrap": ["../src/index"]
     }
   },
   "include": [

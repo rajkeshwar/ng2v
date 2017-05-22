@@ -15,7 +15,7 @@ const ENTRY_CMPTS = {
 function generateAppTsContent(componentName, demoName) {
   const demoClassName = `Ngbd${capitalize(componentName)}${capitalize(demoName)}`;
   const demoImport = `./${componentName}-${demoName}`;
-  const demoSelector = `ng2vd-${componentName}-${demoName}`;
+  const demoSelector = `ngbd-${componentName}-${demoName}`;
   const needsEntryCmpt = ENTRY_CMPTS.hasOwnProperty(componentName) && ENTRY_CMPTS[componentName].indexOf(demoName) > -1;
   const entryCmptClass =  needsEntryCmpt ? `Ngbd${capitalize(componentName)}Content` : null;
   const demoImports = needsEntryCmpt ? `${demoClassName}, ${entryCmptClass}` : demoClassName;

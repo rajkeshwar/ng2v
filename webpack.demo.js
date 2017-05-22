@@ -46,7 +46,7 @@ module.exports = function makeWebpackConfig() {
     'polyfills': './demo/src/polyfills.ts',
     'vendorStyles': [
       './node_modules/prismjs/themes/prism.css',
-      './node_modules/bootstrap/dist/css/bootstrap.css'
+      './node_modules/font-awesome/css/font-awesome.css'
     ],
     'main': './demo/src/main.ts'
   };
@@ -67,7 +67,7 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html#resolve
    */
   config.resolve = {
-    modules: [root('demo'), 'node_modules'],
+    modules: [root('demo', 'src'), 'node_modules'],
     // only discover files that have those extensions
     extensions: ['.ts', '.js', '.css', '.scss', '.html'],
 
@@ -199,7 +199,7 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/angular/angular-cli/tree/master/packages/webpack
       new aotplugin.AotPlugin({
         tsConfigPath: './tsconfig-aot.json',
-        entryModule: root('demo/src/app/') + 'app.module#NgbdModule'
+        entryModule: root('demo/src/app/') + 'app.module#Ng2vdModule'
       }),
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin

@@ -10,7 +10,7 @@ function genDemoComponent(component, demo) {
   return `import {Component} from '@angular/core';
 
 @Component({
-  selector: 'ng2vd-${component}-${demo}',
+  selector: 'ngbd-${component}-${demo}',
   template: require('./${component}-${demo}.html')
 })
 export class Ngbd${capitalize(component)}${capitalize(demo)} {

@@ -1,0 +1,12 @@
+<div>maxSize = 5, rotate = false</div>
+<ng2v-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ng2v-pagination>
+
+<div>maxSize = 5, rotate = true</div>
+<ng2v-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ng2v-pagination>
+
+<div>maxSize = 5, rotate = true, ellipses = false</div>
+<ng2v-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ng2v-pagination>
+
+<hr>
+
+<pre>Current page: {{page}}</pre>

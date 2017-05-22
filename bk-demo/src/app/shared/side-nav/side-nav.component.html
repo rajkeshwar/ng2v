@@ -1,0 +1,32 @@
+<div class="bd-sidebar">
+  <nav>
+    <div class="bd-toc-item">
+
+      <div class="route-links" [routerLinkActive]="['is-visible']">
+        <a class="bd-toc-link" [routerLink]="['/components']">
+          <h4>Components</h4>
+        </a>
+        <ul class="nav flex-column">
+          <li *ngFor="let component of components" [routerLinkActive]="['active']">
+            <a [routerLink]="['/components', component.toLowerCase()]">{{ component }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="route-links" [routerLinkActive]="['is-visible']">
+        <a class="bd-toc-link" [routerLink]="['/elements']">
+          <h4>Elements</h4>
+        </a>
+        <ul class="nav flex-column">
+          <!--<li *ngFor="let element of cssElements" [class.active]="element==active">
+            <a (click)="setActiveTab(element)">{{ element }}</a>
+          </li>-->
+          <li *ngFor="let element of cssElements" [routerLinkActive]="['active']">
+            <a [routerLink]="['/elements', toElementRoute(element)]">{{ element }}</a>
+          </li> 
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
