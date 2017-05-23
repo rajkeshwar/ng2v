@@ -18,9 +18,13 @@ import {Ng2vTooltipModule} from './tooltip/tooltip.module';
 import {Ng2vTypeaheadModule, Ng2vTypeaheadSelectItemEvent} from './typeahead/typeahead.module';
 import {Ng2vSidemenuModule} from './sidemenu/sidemenu.module';
 import {Ng2vMultiselectModule} from './multiselect/multiselect.module';
+import { Ng2vLoaderModule } from './loader/loader-module';
+import { Ng2vSpinnerModule } from './spinner/spinner-module';
 
 export {Ng2vSidemenuModule} from './sidemenu/sidemenu.module';
 export {Ng2vMultiselectModule} from './multiselect/multiselect.module';
+export { Ng2vLoaderModule } from './loader/loader-module';
+export { Ng2vSpinnerModule } from './spinner/spinner-module';
 
 export {
   Ng2vAccordionModule,
@@ -78,7 +82,7 @@ export {
 } from './typeahead/typeahead.module';
 
 const NGB_MODULES = [
-  Ng2vSidemenuModule, Ng2vMultiselectModule,
+  Ng2vSidemenuModule, Ng2vMultiselectModule, Ng2vLoaderModule, Ng2vSpinnerModule,
   Ng2vAccordionModule, Ng2vAlertModule, Ng2vButtonsModule, Ng2vCarouselModule,
   Ng2vCollapseModule, Ng2vDatepickerModule, Ng2vDropdownModule, Ng2vModalModule,
   Ng2vPaginationModule, Ng2vPopoverModule, Ng2vProgressbarModule, Ng2vRatingModule,
@@ -96,7 +100,8 @@ const NGB_MODULES = [
     Ng2vModalModule.forRoot(), Ng2vPaginationModule.forRoot(),
     Ng2vPopoverModule.forRoot(), Ng2vProgressbarModule.forRoot(),
     Ng2vRatingModule.forRoot(), Ng2vTabsetModule.forRoot(),
-    Ng2vTimepickerModule.forRoot(), Ng2vTooltipModule.forRoot()
+    Ng2vTimepickerModule.forRoot(), Ng2vTooltipModule.forRoot(),
+    Ng2vLoaderModule.forRoot(), Ng2vSpinnerModule.forRoot()
   ],
   exports: NGB_MODULES
 })

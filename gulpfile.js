@@ -85,12 +85,9 @@ gulp.task('ngc', function(cb) {
   }).stdout.on('data', function(data) { console.log(data); });
 });
 
-gulp.task('filerename', () => {
-  gulp.src('src/*.ts')
-    .pipe(rename( path => {
-        path.basename = path.basename.replace(/ngb/, 'ng2v');
-    }))
-    .pipe(gulp.dest('f-rename'));
+gulp.task('copy:images', () => {
+  gulp.src('demo/src/public/img/*.*')
+    .pipe(gulp.dest('demo/dist/img'));
 });
 
 gulp.task('umd', function(cb) {
@@ -302,7 +299,10 @@ gulp.task(
 //     'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks'],
 //     shell.task(['webpack --config webpack.demo.js --progress --profile --bail'], {env: {MODE: 'build'}}));
 
-gulp.task('build:demo', ['clean:demo', 'generate-docs', 'generate-plunks']);
+gulp.task(
+  'build:demo', ['clean:demo', 'generate-docs', 'generate-plunks', 'copy:images'],
+  shell.task(['webpack --config webpack.demo.js --progress --profile --bail'])
+);
 
 gulp.task(
     'demo-server:aot', ['generate-docs', 'generate-plunks'],

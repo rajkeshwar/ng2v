@@ -1,0 +1,14 @@
+<p>
+  Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+</p>
+<ng2v-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!</ng2v-alert>
+
+<hr/>
+
+<p>
+  Show a self-closing success message that disappears after 5 seconds.
+</p>
+<ng2v-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ng2v-alert>
+<p>
+  <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+</p>

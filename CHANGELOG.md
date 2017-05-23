@@ -1,4 +1,14 @@
 <a name="1.0.0-alpha.25"></a>
+# [1.0.0-alpha.25](https://github.com/ng-bootstrap/ng-bootstrap/compare/0.0.4...1.0.0-alpha.25) (2017-05-23)
+
+
+
+<a name="1.0.0-alpha.25"></a>
+# [1.0.0-alpha.25](https://github.com/ng-bootstrap/ng-bootstrap/compare/0.0.4...1.0.0-alpha.25) (2017-05-23)
+
+
+
+<a name="1.0.0-alpha.25"></a>
 # [1.0.0-alpha.25](https://github.com/ng-bootstrap/ng-bootstrap/compare/1.0.0-alpha.24...1.0.0-alpha.25) (2017-04-25)
 
 

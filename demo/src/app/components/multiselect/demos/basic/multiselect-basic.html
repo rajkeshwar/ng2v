@@ -1,0 +1,164 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <ng2v-multiselect 
+            [options]="options" 
+            [texts]="{'defaultTitle':'Select cities'}"
+            (dropdownOpen)="dropdownOpen($event)"
+            (dropdownClosed)="dropdownClosed()"
+            (searchValueChange)="searchValueChange($event)"
+            (clearFilter)="clearFilter()"
+            [(ngModel)]="selectedValues">
+        </ng2v-multiselect>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary" (click)="showBusyMask()">Show Busy Mask</button>        
+    </div>    
+</div>
+
+<div class="row" style="height:100px">
+    <div class="col-md-12" style="position:relative">
+        <ng2v-progress [isMask]="isMask"></ng2v-progress>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3" *ngFor="let spinner of spinners">
+        <ng2v-spinner [spinnerType]="spinner"></ng2v-spinner>
+    </div>
+</div>
+
+
+<h3>Checkboxes</h3>
+<div class="md-checkbox">
+  <input id="i2" type="checkbox" checked>
+  <label for="i2" class="">Item 1</label>
+</div>
+<div class="md-checkbox">
+  <input id="i1" type="checkbox">
+  <label for="i1" class="">Item 2</label>
+</div>
+
+<h3> Radio button</h3>
+<div class="card">
+    <div class="flex">
+      <div>
+        <div class="mf-radio-inline">
+          <div class="mf-radio-legend">Do you really want this?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio"/><i class="mf-radio-button"></i><span>Yes</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio"/><i class="mf-radio-button"></i><span>No</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+        <div class="mf-radio-block">
+          <div class="mf-radio-legend">What you prefer?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre"/><i class="mf-radio-button"></i><span>Rock 'n' Roll, Baby!</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre"/><i class="mf-radio-button"></i><span>Indie is the way to go.</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+      </div>
+      <div>
+        <div class="mf-radio-inline mf-has-error">
+          <div class="mf-radio-legend">Do you really want this?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio"/><i class="mf-radio-button"></i><span>Yes</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio"/><i class="mf-radio-button"></i><span>No</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+        <div class="mf-radio-block mf-has-error">
+          <div class="mf-radio-legend">What you prefer?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre"/><i class="mf-radio-button"></i><span>Rock 'n' Roll, Baby!</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre"/><i class="mf-radio-button"></i><span>Indie is the way to go.</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+      </div>
+      <div>
+        <div class="mf-radio-inline mf-is-success">
+          <div class="mf-radio-legend">Do you really want this?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio" checked="checked"/><i class="mf-radio-button"></i><span>Yes</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="radio"/><i class="mf-radio-button"></i><span>No</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+        <div class="mf-radio-block mf-is-success">
+          <div class="mf-radio-legend">What you prefer?</div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre" checked="checked"/><i class="mf-radio-button"></i><span>Rock 'n' Roll, Baby!</span>
+            </label>
+          </div>
+          <div class="mf-radio">
+            <label>
+              <input type="radio" name="genre"/><i class="mf-radio-button"></i><span>Indie is the way to go.</span>
+            </label>
+          </div>
+          <div class="mf-radio-hint">This is a hint text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"> 
+  <p>M: <a href="#">http://codepen.io/sevilayha/pen/IdGKH</a></p>
+  
+  <div class="material-form-field">
+    <input type="text" required name="text" id="field-text"/>
+    <label class="material-form-field-label" for="field-text">Test</label>
+  </div>
+  
+  <div class="material-form-field material-form-field-invalid" data-validationError="This field is invalid">
+    <input type="text" required name="text-invalid" id="field-text-invalid"/>
+    <label class="material-form-field-label" for="field-text-invalid">Validation</label>
+  </div>
+  
+  <div class="material-form-field">
+    <input type="text" required name="dropDown" id="field-dropDown"/>
+    <label class="material-form-field-label" for="field-dropDown">Drop down</label>
+    <ul class="material-dropdown">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li class="material-dropdown-selected">Item 3 selected</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+    </ul>
+  </div>
+  
+</div>

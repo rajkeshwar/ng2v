@@ -1,3 +1,414 @@
 
 @import 'sidemenu/sidemenu.component';
 @import 'multiselect/multiselect';
+@import 'spinner/spinner-component';
+@import 'loader/loader-component';
+
+
+///////////////////////////////////////////////////
+// =============== Checkbox SCSS =============== //
+///////////////////////////////////////////////////
+
+$md-checkbox-margin: 16px 0;
+$md-checkbox-checked-color: rgb(51, 122, 183);
+$md-checkbox-border-color: rgba(0, 0, 0, 0.54);
+
+$md-checkbox-size: 20px;
+$md-checkbox-padding: 4px;
+
+$md-checkmark-width: 2px;
+$md-checkmark-color: #fff;
+
+.md-checkbox {
+  position: relative;
+  height: $md-checkbox-size;
+  margin: $md-checkbox-margin;
+
+  label {
+    cursor: pointer;
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left:0;
+      top: 0;
+    }
+    
+    &:before {
+      // box
+      width: $md-checkbox-size;
+      height: $md-checkbox-size;
+      background: #fff;
+      border: 2px solid $md-checkbox-border-color;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background .3s;
+    }
+  
+    &:after {
+      // checkmark
+    }    
+  }
+  
+  input[type="checkbox"] {
+    outline: 0;
+    margin-right: $md-checkbox-size - 10px;
+    
+    &:checked {
+       + label:before{
+        background: $md-checkbox-checked-color;
+        border:none;
+      }
+      + label:after {
+        
+        $md-checkmark-size: $md-checkbox-size - 2*$md-checkbox-padding;
+
+        transform: rotate(-45deg);
+
+        top: ($md-checkbox-size / 2) - ($md-checkmark-size / 4) - $md-checkbox-size/10;
+        left: $md-checkbox-padding;
+        width: $md-checkmark-size;
+        height: $md-checkmark-size / 2;
+        
+        border: $md-checkmark-width solid $md-checkmark-color;
+        border-top-style: none;
+        border-right-style: none;
+      } 
+    }
+  }
+ 
+}
+
+///////////////////////////////////////////////////////
+// ============== Radio Button SCSS ================ //
+///////////////////////////////////////////////////////
+
+// Font Sizes
+$mf-font-size: 1rem !default;
+$mf-font-size-active: $mf-font-size * 0.8 !default;
+$mf-legend-font-size: $mf-font-size * 1 !default;
+$mf-legend-font-weight: 500 !default;
+$mf-hint-font-size: $mf-font-size * 0.8 !default;
+$mf-hint-font-weight: 400 !default;
+
+// Margin & Paddings
+$mf-gap: $mf-font-size * 1.5 !default;
+$mf-spacer: $mf-font-size / 8 !default;
+$mf-legend-margin: 0 0 $mf-spacer 0 !default;
+$mf-hint-margin: $mf-spacer 0 !default;
+
+// Colors
+$mf-input-color: #333 !default;
+$mf-border-color: #999 !default;
+$mf-label-color: lighten($mf-border-color, 10%) !default;
+$mf-legend-color: $mf-input-color !default;
+$mf-active-color: darken($mf-border-color, 10%) !default;
+$mf-focus-color: #337ab7 !default;
+$mf-error-color: #d9534f !default;
+$mf-success-color: #259337 !default;
+$mf-hint-color: $mf-label-color !default;
+
+// Animation
+$mf-transition-speed: 0.28s !default;
+
+
+// Radio Buttons
+$mf-radio-gap: $mf-font-size * 1.5 !default;
+$mf-radio-color: $mf-input-color !default;
+$mf-radio-margin-bottom: $mf-spacer !default;
+$mf-radio-size: $mf-font-size !default;
+$mf-radio-left: 0 !default;
+$mf-radio-top: 0 !default;
+$mf-radio-border-color: $mf-border-color !default;
+$mf-radio-active-color: $mf-active-color !default;
+$mf-radio-focus-color: $mf-focus-color !default;
+$mf-radio-inline-margin-right: $mf-font-size !default;
+$mf-radio-legend-font-weight: $mf-legend-font-weight !default;
+$mf-radio-legend-font-size: $mf-legend-font-size !default;
+$mf-radio-legend-margin: $mf-legend-margin !default;
+$mf-radio-hint-font-weight: $mf-hint-font-weight !default;
+$mf-radio-hint-font-size: $mf-hint-font-size !default;
+$mf-radio-hint-margin: $mf-hint-margin !default;
+$mf-radio-hint-color: $mf-hint-color !default;
+$mf-radio-label-top: 0 !default;
+$mf-radio-label-left: $mf-radio-gap !default;
+$mf-radio-legend-color: $mf-legend-color !default;
+
+.mf-has-error {
+	.mf-radio-hint,
+	.mf-radio-button {
+		color: $mf-error-color;
+	}
+}
+
+.mf-is-success {
+	.mf-radio-hint {
+		color: $mf-success-color;
+	}
+}
+
+.mf-radio-block,
+.mf-radio-inline {
+	position: relative;
+	margin-top: $mf-radio-gap;
+	margin-bottom: $mf-radio-gap;
+	text-align: left;
+}
+
+.mf-radio-inline {
+	.mf-radio {
+		display: inline-block;
+		margin-right: $mf-radio-inline-margin-right;
+	}
+}
+
+.mf-radio-legend {
+	margin: $mf-radio-legend-margin;
+	font-weight: $mf-radio-legend-font-weight;
+	font-size: $mf-radio-legend-font-size;
+	color: $mf-radio-legend-color;
+}
+
+.mf-radio-hint {
+	margin: $mf-radio-hint-margin;
+	font-weight: $mf-radio-hint-font-weight;
+	font-size: $mf-radio-hint-font-size;
+	color: $mf-radio-hint-color;
+	transition: color $mf-transition-speed ease;
+}
+
+.mf-radio {
+	margin-bottom: $mf-radio-margin-bottom;
+
+	label {
+		position: relative;
+		cursor: pointer;
+		padding-left: $mf-radio-label-left;
+		text-align: left;
+		color: $mf-radio-color;
+		display: block;
+
+		&:hover .mf-radio-button {
+			color: $mf-radio-focus-color;
+		}
+
+		span {
+			display: block;
+			@if $mf-radio-label-top {
+				transform: translateY($mf-radio-label-top);
+			}
+		}
+	}
+
+	input {
+		// scss-lint:disable NestingDepth
+		width: auto;
+		opacity: 0.0001;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		padding: 0;
+
+		&:checked {
+			~ .mf-radio-button {
+				&::after {
+					transform: scale(0.5);
+				}
+
+				&::before {
+					color: $mf-radio-focus-color;
+				}
+			}
+		}
+	}
+}
+
+.mf-radio-button {
+	position: absolute;
+	top: $mf-radio-top;
+	left: $mf-radio-left;
+	cursor: pointer;
+	display: block;
+	user-select: none;
+	color: $mf-radio-border-color;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: ($mf-spacer * 2);
+		width: $mf-radio-size;
+		height: $mf-radio-size;
+		transition: transform $mf-transition-speed ease;
+		border-radius: 50%;
+		border: ($mf-radio-size / 8) solid currentColor;
+	}
+
+	&::after {
+		transform: scale(0);
+		background-color: $mf-radio-focus-color;
+		border-color: $mf-radio-focus-color;
+	}
+}
+
+
+//////////////////////////////////////////////////////////////
+// ============== Material input ========================== //
+/////////////////////////////////////////////////////////////
+
+/*
+My take on pure CSS material design inputs and drop-down
+Influenced heavily by: http://codepen.io/sevilayha/pen/IdGKH
+*/
+
+$material-form-label: #000000;
+$material-form-label-focus: #3f51b5;
+$material-form-line: #000000;
+$material-form-line-focus: $material-form-label-focus;
+$material-form-input-text: $material-form-label;
+$material-form-input-text-focus: $material-form-label-focus;
+$material-form-field-invalid-foreground: #d50000;
+
+$material-dropdown-hoverBackground: #e8eaf6;
+$material-dropdown-selectedBackground: #9fa8da;
+$material-labelOffset: 25px;
+$material-textInputPaddingTopBottom: 10px;
+
+/*
+A dropdown menu that covers the content
+Note: MUST be placed inside a relative position element (works with .material-form-field)
+Expected html:
+<ul class="material-dropdown">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+...
+</ul>
+*/
+.material-dropdown{
+  position:absolute;
+  left:0;
+  width:100%;
+  height:0;
+  margin:0;
+  padding:0;
+  list-style: none;
+  overflow: hidden;
+  background: #FFFFFF;
+  color:#000000;
+  z-index:1000;
+
+  transition:0.2s ease-in height, step-end box-shadow 0.2s;
+  -moz-transition:0.2s ease-in height, step-end box-shadow 0.2s;
+  -webkit-transition:0.2s ease-in height, step-end box-shadow 0.2s;
+  
+  &.material-dropdown-open{
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  li{
+    padding:10px;
+    cursor:default;
+    user-select:none;
+    &:hover{
+      background-color: $material-dropdown-hoverBackground;
+    }
+    &.material-dropdown-selected{
+      background-color: $material-dropdown-selectedBackground;
+    }
+  }
+}
+
+
+/*
+A material design form field
+Expects this html (note the required attribute on the input):
+<div class="material-form-field">
+<input type="text" required/>
+<label class="material-form-field-label">Form field title</label>
+</div>
+*/
+.material-form-field{
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  position:relative;
+  display:block;
+  color:$material-form-label;
+  padding:$material-labelOffset 0 10px 0;
+
+  &::after{
+    content:"\00A0";
+    display:block;
+    color: $material-form-field-invalid-foreground;
+    font-size:12px;
+    padding-top:5px;
+  }
+
+  .material-form-field-label{
+    position:absolute;
+    display:block;
+    top: $material-labelOffset + $material-textInputPaddingTopBottom;
+    left: 0px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+    pointer-events:none;
+    cursor:text;
+  }
+
+  input{
+    padding:$material-textInputPaddingTopBottom 0 $material-textInputPaddingTopBottom 0;
+    display:block;
+    width:100%;
+    border:none;
+    font-size:14px;
+    color:$material-form-input-text;
+    border-bottom:1px solid $material-form-line;
+    outline:none;
+
+    &:invalid{
+      outline:none;
+      box-shadow: none;
+    }
+    &:valid, &:focus{
+      & ~ .material-form-field-label{
+        top: $material-labelOffset - ($material-textInputPaddingTopBottom + 5);
+        font-size:12px;
+      }
+    }
+    &:focus{
+      outline:none;
+      color:$material-form-input-text-focus;
+      padding-bottom: $material-textInputPaddingTopBottom - 2;
+      border-bottom-width:3px;
+      border-bottom-color:$material-form-line-focus;
+
+      & ~ .material-form-field-label{
+        color:$material-form-label-focus;
+      }
+
+      & ~ .material-dropdown{
+        /*
+        If you want to animate this you will need to use some js to calculate it
+        Optionally, you can simply display:block/none 
+        */
+        height:228px; 
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+        transition:0.2s ease-out height, step-start box-shadow 0.2s;
+        -moz-transition:0.2s ease-out height, step-start box-shadow 0.2s;
+        -webkit-transition:0.2s ease-out height, step-start box-shadow 0.2s;
+      }
+    }
+  }
+
+  &.material-form-field-invalid{
+    color: $material-form-field-invalid-foreground;
+    &::after{
+      content:attr(data-validationError);
+    }
+    input:focus ~ .material-form-field-label{
+      color: $material-form-field-invalid-foreground;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div>Default pagination</div>
+<ng2v-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ng2v-pagination>
+
+<div>directionLinks = false</div>
+<ng2v-pagination [collectionSize]="70" [(page)]="page" [directionLinks]="false"></ng2v-pagination>
+
+<div>boundaryLinks = true</div>
+<ng2v-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ng2v-pagination>
+
+<hr>
+
+<pre>Current page: {{page}}</pre>
