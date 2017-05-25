@@ -5,8 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-alert',
   template: `
     <ng2vd-content-wrapper component="Alert">
-      <ng2vd-api-docs directive="Ng2vAlert"></ng2vd-api-docs>
-      <ng2vd-api-docs-config type="Ng2vAlertConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Basic Alert" [snippets]="snippets" component="alert" demo="basic">
         <ng2vd-alert-basic></ng2vd-alert-basic>
       </ng2vd-example-box>
@@ -22,6 +21,10 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration of alerts" [snippets]="snippets" component="alert" demo="config">
         <ng2vd-alert-config></ng2vd-alert-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vAlert"></ng2vd-api-docs>
+      <ng2vd-api-docs-config type="Ng2vAlertConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

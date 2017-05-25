@@ -4,13 +4,17 @@ import {DefaultComponent} from './default';
 import {GettingStarted} from './getting-started';
 import { ButtonGroupsComponent } from './css-elements/button-groups/index';
 import { InputGroupsComponent } from './css-elements/input-groups/index';
-import { LabelsComponent } from './css-elements/labels/index';
 import { BadgesComponent } from './css-elements/badges/index';
 import { NavbarsComponent } from './css-elements/navbars/index';
 import { ListGroupsComponent } from './css-elements/list-groups/index';
 import { PanelsComponent } from './css-elements/panels/index';
 import { Ng2vdSidemenu } from './components/sidemenu/sidemenu.component';
 import { Ng2vdMultiselect } from './components/multiselect/multiselect.component';
+import { FormsComponent } from './css-elements/forms/index';
+import { TypographyComponent } from './css-elements/typography/index';
+import { TablesComponent } from './css-elements/tables/index';
+import { UtilitiesComponent } from './css-elements/utilities/index';
+import { NavsComponent } from './css-elements/nav/index';
 
 import {
   Ng2vdAccordion,
@@ -36,14 +40,18 @@ const routes: Routes = [
   {path: 'home', component: DefaultComponent},
   {path: 'getting-started', component: GettingStarted},
 
-  {path: 'elements', redirectTo: 'elements/labels'},
-  {path: 'elements/labels', component: LabelsComponent},
+  {path: 'elements', redirectTo: 'elements/badges'},
+  {path: 'elements/navs', component: NavsComponent},
   {path: 'elements/badges', component: BadgesComponent},  
   {path: 'elements/button-groups', component: ButtonGroupsComponent},
   {path: 'elements/input-groups', component: InputGroupsComponent},
+  {path: 'elements/forms', component: FormsComponent},    
   {path: 'elements/navbar', component: NavbarsComponent},
   {path: 'elements/list-group', component: ListGroupsComponent},
   {path: 'elements/panels', component: PanelsComponent},
+  {path: 'elements/typography', component: TypographyComponent},
+  {path: 'elements/tables', component: TablesComponent},
+  {path: 'elements/utilities', component: UtilitiesComponent},
   
   {path: 'components', redirectTo: 'components/sidemenu'},
   {path: 'components/sidemenu', component: Ng2vdSidemenu},  

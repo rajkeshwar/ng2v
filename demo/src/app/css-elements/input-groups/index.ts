@@ -19,6 +19,11 @@ import { Component } from '@angular/core';
                 <div [htmlTemplate]="'./input-groups/checkbox-radio.html'"></div>
             </ng2vd-example-box>
 
+            <ng2vd-example-box demoTitle="Multiple Addons"
+                [snippets]="snippets" component="MultipleAddons" demo="multipleAddons">
+                <div [htmlTemplate]="'./input-groups/multiple-addons.html'"></div>
+            </ng2vd-example-box>
+
             <ng2vd-example-box demoTitle="Button Addons"
                 [snippets]="snippets" component="Button Addons" demo="buttonAddons">
                 <div [htmlTemplate]="'./input-groups/button-addons.html'"></div>
@@ -38,6 +43,9 @@ export class InputGroupsComponent {
         },
         checkboxRadio: {
             markup: require('!!prismjs-loader?lang=markup!./checkbox-radio.html')
+        },
+        multipleAddons: {
+            markup: require('!!prismjs-loader?lang=markup!./multiple-addons.html')
         },
         buttonAddons: {
             markup: require('!!prismjs-loader?lang=markup!./button-addons.html')

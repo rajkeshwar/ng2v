@@ -6,10 +6,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-modal',
   template: `
     <ng2vd-content-wrapper component="Modal">
-      <ng2vd-api-docs-class type="Ng2vModal"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vModalOptions"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vModalRef"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vActiveModal"></ng2vd-api-docs-class>
+      
       <ng2vd-example-box demoTitle="Modal with default options" [snippets]="snippets" component="modal" demo="basic">
           <ng2vd-modal-basic></ng2vd-modal-basic>
       </ng2vd-example-box>
@@ -19,6 +16,12 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Modal with custom class" [snippets]="snippets" component="modal" demo="customclass">
           <ng2vd-modal-customclass></ng2vd-modal-customclass>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs-class type="Ng2vModal"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vModalOptions"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vModalRef"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vActiveModal"></ng2vd-api-docs-class>
+      
     </ng2vd-content-wrapper>
   `
 })

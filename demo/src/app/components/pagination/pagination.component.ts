@@ -5,8 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-pagination',
   template: `
     <ng2vd-content-wrapper component="Pagination">
-      <ng2vd-api-docs directive="Ng2vPagination"></ng2vd-api-docs>
-      <ng2vd-api-docs-config type="Ng2vPaginationConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Basic pagination" [snippets]="snippets" component="pagination" demo="basic">
         <ng2vd-pagination-basic></ng2vd-pagination-basic>
       </ng2vd-example-box>
@@ -22,6 +21,10 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration" [snippets]="snippets" component="pagination" demo="config">
         <ng2vd-pagination-config></ng2vd-pagination-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vPagination"></ng2vd-api-docs>
+      <ng2vd-api-docs-config type="Ng2vPaginationConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

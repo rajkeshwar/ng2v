@@ -7,6 +7,7 @@ var ghPages = require('gulp-gh-pages');
 var gulpFile = require('gulp-file');
 var replace = require('gulp-replace-task');
 var rename = require('gulp-rename');
+var sass = require('gulp-sass');
 var del = require('del');
 var clangFormat = require('clang-format');
 var gulpFormat = require('gulp-clang-format');
@@ -122,6 +123,12 @@ gulp.task('umd', function(cb) {
         ]
       },
       webpackCallBack('webpack', cb));
+});
+
+gulp.task('sass', function () {
+  return gulp.src('demo/src/style/app.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('npm', function() {

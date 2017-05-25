@@ -9,6 +9,16 @@ import { Component } from '@angular/core';
                 <div [htmlTemplate]="'./button-groups/basic-example.html'"></div>
             </ng2vd-example-box>
             
+            <ng2vd-example-box demoTitle="Button Tags"
+                [snippets]="snippets" component="Button Tags" demo="buttonTags">
+                <div [htmlTemplate]="'./button-groups/button-tags.html'"></div>
+            </ng2vd-example-box>
+
+            <ng2vd-example-box demoTitle="Outline Buttons"
+                [snippets]="snippets" component="Outline Buttons" demo="outlineButtons">
+                <div [htmlTemplate]="'./button-groups/outline-buttons.html'"></div>
+            </ng2vd-example-box>
+
             <ng2vd-example-box demoTitle="Button Toolbar"
                 [snippets]="snippets" component="Button Toolbar" demo="buttonToolbar">
                 <div [htmlTemplate]="'./button-groups/button-toolbar.html'"></div>
@@ -32,6 +42,12 @@ export class ButtonGroupsComponent {
     snippets = {
         basicExample: {
             markup: require('!!prismjs-loader?lang=markup!./basic-example.html')
+        },
+        buttonTags: {
+            markup: require('!!prismjs-loader?lang=markup!./button-tags.html')
+        },
+        outlineButtons: {
+            markup: require('!!prismjs-loader?lang=markup!./outline-buttons.html')
         },
         buttonToolbar: {
             markup: require('!!prismjs-loader?lang=markup!./button-toolbar.html')

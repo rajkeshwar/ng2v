@@ -5,8 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-progressbar',
   template: `
     <ng2vd-content-wrapper component="Progressbar">
-      <ng2vd-api-docs directive="Ng2vProgressbar"></ng2vd-api-docs>
-      <ng2vd-api-docs-config type="Ng2vProgressbarConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Contextual progress bars" [snippets]="snippets" component="progressbar" demo="basic">
         <ng2vd-progressbar-basic></ng2vd-progressbar-basic>
       </ng2vd-example-box>
@@ -22,6 +21,10 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration of progress bars" [snippets]="snippets" component="progressbar" demo="config">
         <ng2vd-progressbar-config></ng2vd-progressbar-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vProgressbar"></ng2vd-api-docs>
+      <ng2vd-api-docs-config type="Ng2vProgressbarConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

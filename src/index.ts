@@ -1,4 +1,4 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import { NgModule, ModuleWithProviders, Pipe } from '@angular/core';
 
 import {Ng2vAccordionModule, Ng2vPanelChangeEvent} from './accordion/accordion.module';
 import {Ng2vAlertModule} from './alert/alert.module';
@@ -21,10 +21,20 @@ import {Ng2vMultiselectModule} from './multiselect/multiselect.module';
 import { Ng2vLoaderModule } from './loader/loader-module';
 import { Ng2vSpinnerModule } from './spinner/spinner-module';
 
+// import { Ng2vToastyModule, Ng2vToastData, Ng2vToastyService, Ng2vToastyConfig, Ng2vToastOptions } from './toasty/toasty.module';
+
 export {Ng2vSidemenuModule} from './sidemenu/sidemenu.module';
 export {Ng2vMultiselectModule} from './multiselect/multiselect.module';
 export { Ng2vLoaderModule } from './loader/loader-module';
 export { Ng2vSpinnerModule } from './spinner/spinner-module';
+
+// export { 
+//   Ng2vToastyModule, 
+//   Ng2vToastData, 
+//   Ng2vToastyService, 
+//   Ng2vToastyConfig, 
+//   Ng2vToastOptions 
+// } from './toasty/toasty.module';
 
 export {
   Ng2vAccordionModule,
@@ -87,6 +97,7 @@ const NGB_MODULES = [
   Ng2vCollapseModule, Ng2vDatepickerModule, Ng2vDropdownModule, Ng2vModalModule,
   Ng2vPaginationModule, Ng2vPopoverModule, Ng2vProgressbarModule, Ng2vRatingModule,
   Ng2vTabsetModule, Ng2vTimepickerModule, Ng2vTooltipModule, Ng2vTypeaheadModule
+  // Ng2vToastyModule
 ];
 
 @NgModule({
@@ -101,7 +112,8 @@ const NGB_MODULES = [
     Ng2vPopoverModule.forRoot(), Ng2vProgressbarModule.forRoot(),
     Ng2vRatingModule.forRoot(), Ng2vTabsetModule.forRoot(),
     Ng2vTimepickerModule.forRoot(), Ng2vTooltipModule.forRoot(),
-    Ng2vLoaderModule.forRoot(), Ng2vSpinnerModule.forRoot()
+    Ng2vLoaderModule.forRoot(), Ng2vSpinnerModule.forRoot(),
+    // Ng2vToastyModule.forRoot()
   ],
   exports: NGB_MODULES
 })

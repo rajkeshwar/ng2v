@@ -9,8 +9,8 @@ export const componentsList = [
 ];
 
 export const cssElementsList = [
-  'Labels', 'Badges', 'Button Groups', 'Input Groups', 'Navbar',
-  'List group', 'Panels'
+  'Badges', 'Button Groups', 'Input Groups', 'Forms', 
+  'Navs', 'Navbar', 'List group', 'Tables', 'Panels', 'Typography', 'Utilities'
 ];
 
 @Component({

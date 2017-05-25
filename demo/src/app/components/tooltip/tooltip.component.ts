@@ -5,8 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-tooltip',
   template: `
     <ng2vd-content-wrapper component="Tooltip">
-      <ng2vd-api-docs directive="Ng2vTooltip"></ng2vd-api-docs>
-      <ng2vd-api-docs-config type="Ng2vTooltipConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Quick and easy tooltips" [snippets]="snippets" component="tooltip" demo="basic">
         <ng2vd-tooltip-basic></ng2vd-tooltip-basic>
       </ng2vd-example-box>
@@ -30,6 +29,10 @@ import {DEMO_SNIPPETS} from './demos';
         demoTitle="Global configuration of tooltips" [snippets]="snippets" component="tooltip" demo="config">
         <ng2vd-tooltip-config></ng2vd-tooltip-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vTooltip"></ng2vd-api-docs>
+      <ng2vd-api-docs-config type="Ng2vTooltipConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

@@ -1,10 +1,32 @@
 <p>This dropdown uses customized default values.</p>
 
-<div ng2vDropdown>
-  <button class="btn btn-outline-primary" id="dropdownConfig" ng2vDropdownToggle>Toggle</button>
-  <div class="dropdown-menu" aria-labelledby="dropdownConfig">
-    <button class="dropdown-item">Action - 1</button>
-    <button class="dropdown-item">Another Action</button>
-    <button class="dropdown-item">Something else is here</button>
+<div class="row">
+  <div class="col">
+    <div ng2vDropdown>
+      <button class="btn btn-outline-primary" id="dropdownConfig" ng2vDropdownToggle>Toggle</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownConfig">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col text-right">
+    <div ng2vDropdown class="btn-group">
+      <button type="button" class="btn btn-secondary">Action</button>
+      <button type="button" ng2vDropdownToggle class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div>
   </div>
 </div>
+
+

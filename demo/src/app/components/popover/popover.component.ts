@@ -5,8 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-popover',
   template: `
     <ng2vd-content-wrapper component="Popover">
-      <ng2vd-api-docs directive="Ng2vPopover"></ng2vd-api-docs>
-      <ng2vd-api-docs-config type="Ng2vPopoverConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Quick and easy popovers" [snippets]="snippets" component="popover" demo="basic">
         <ng2vd-popover-basic></ng2vd-popover-basic>
       </ng2vd-example-box>
@@ -34,6 +33,10 @@ import {DEMO_SNIPPETS} from './demos';
         demoTitle="Global configuration of popovers" [snippets]="snippets" component="popover" demo="config">
         <ng2vd-popover-config></ng2vd-popover-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vPopover"></ng2vd-api-docs>
+      <ng2vd-api-docs-config type="Ng2vPopoverConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

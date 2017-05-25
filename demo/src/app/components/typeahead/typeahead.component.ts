@@ -5,10 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-typeahead',
   template: `
     <ng2vd-content-wrapper component="Typeahead">
-      <ng2vd-api-docs directive="Ng2vTypeahead"></ng2vd-api-docs>
-      <ng2vd-api-docs-class type="Ng2vTypeaheadSelectItemEvent"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="ResultTemplateContext"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-config type="Ng2vTypeaheadConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Simple Typeahead" [snippets]="snippets" component="typeahead" demo="basic">
         <ng2vd-typeahead-basic></ng2vd-typeahead-basic>
       </ng2vd-example-box>
@@ -24,6 +21,12 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration of typeaheads" [snippets]="snippets" component="typeahead" demo="config">
         <ng2vd-typeahead-config></ng2vd-typeahead-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vTypeahead"></ng2vd-api-docs>
+      <ng2vd-api-docs-class type="Ng2vTypeaheadSelectItemEvent"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="ResultTemplateContext"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-config type="Ng2vTypeaheadConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

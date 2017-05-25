@@ -4,13 +4,48 @@
  * @copyright: (c) 2016 Kanerika Software Pvt. Ltd. 
  * @website  : https://www.docnme.com/ 
  */
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ng2vSidemenuConfig } from './sidemenu.config';
 
 @Component({
     selector: 'ng2v-side-menu',
-    templateUrl: './sidemenu.component.html'
+    template: `
+        <aside class="main-sidebar" [ngStyle]="styles" [class.open]="isOpen" [style.z-index]="zIndex">
+            <section class="sidebar">
+                <ul class="group">
+                <li class="group__item">
+                    <div class="menu">
+                    <div class="menu__logo" (click)="toggleCollapse()">
+                        <i class="fa" area-hidden="true" [ngClass]="{
+                            'fa-arrow-circle-right':!isOpen, 
+                            'fa-arrow-circle-left':isOpen
+                            }"></i>
+                        </div>
+                    <div class="menu__label"><span>Veraction</span></div> 
+                    </div>
+                </li>
+                <li class="group__item" *ngFor="let menu of menus"> 
+                    <div class="menu" (click)="toggleSubMenu(menu)">
+                    <div class="menu__logo"><i class="fa {{menu.icon}}" area-hidden="true"></i></div>
+                    <div class="menu__label"><span>{{menu.label}}</span></div>
+                    <div class="menu__angle" *ngIf="menu?.subMenus?.length>0">
+                        <i class="fa fa-angle-right" aria-hidden="true" [ngClass]="{
+                            'fa-angle-right' : !menu.isExpanded,
+                            'fa-angle-down' : menu.isExpanded
+                        }"></i></div>
+                    </div>
+                    <ul class="sub-menu" [class.open]="menu.isExpanded">
+                        <li class="sub-menu__item" *ngFor="let sb of menu.subMenus">
+                        <a class="sub-link">{{sb.label}}</a>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+            </section>
+        </aside>
+    `,
+    encapsulation: ViewEncapsulation.None
 })
 export class Ng2vSideMenuComponent {
 

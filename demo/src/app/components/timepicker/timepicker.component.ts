@@ -5,9 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-timepicker',
   template: `
     <ng2vd-content-wrapper component="Timepicker">
-      <ng2vd-api-docs directive="Ng2vTimepicker"></ng2vd-api-docs>
-      <ng2vd-api-docs-class type="Ng2vTimeStruct"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-config type="Ng2vTimepickerConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Timepicker" [snippets]="snippets" component="timepicker" demo="basic">
         <ng2vd-timepicker-basic></ng2vd-timepicker-basic>
       </ng2vd-example-box>
@@ -29,6 +27,11 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration of timepickers" [snippets]="snippets" component="timepicker" demo="config">
         <ng2vd-timepicker-config></ng2vd-timepicker-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vTimepicker"></ng2vd-api-docs>
+      <ng2vd-api-docs-class type="Ng2vTimeStruct"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-config type="Ng2vTimepickerConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })

@@ -1,8 +1,11 @@
 {
   "name": "ng2v-components",
-  "version": "1.0.0-alpha.25",
+  "version": "1.0.5",
   "description": "ng2v-components powered by ng-bootstrap",
-  "keywords": ["ng2v-components", "angular2"],
+  "keywords": [
+    "ng2v-components",
+    "angular2"
+  ],
   "author": "Rajkeshwar Prasad<rajkeshwar.pd@gmail.com>",
   "main": "dist/index.js",
   "engines": {
@@ -17,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ng-bootstrap/ng-bootstrap.git"
+    "url": "git+https://github.com/rajkeshwar/ng2v.git"
   },
   "license": {
     "type": "MIT",
@@ -64,6 +67,7 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-rename": "^1.2.2",
     "gulp-replace-task": "^0.11.0",
+    "gulp-sass": "^3.1.0",
     "gulp-shell": "^0.5.2",
     "gulp-tslint": "^6.1.2",
     "gulp-util": "^3.0.7",

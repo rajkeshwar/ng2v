@@ -5,14 +5,7 @@ import {DEMO_SNIPPETS} from './demos';
   selector: 'ng2vd-datepicker',
   template: `
     <ng2vd-content-wrapper component="Datepicker">
-      <ng2vd-api-docs directive="Ng2vDatepicker"></ng2vd-api-docs>
-      <ng2vd-api-docs directive="Ng2vInputDatepicker"></ng2vd-api-docs>
-      <ng2vd-api-docs-class type="Ng2vDateStruct"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="DayTemplateContext"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vDatepickerNavigateEvent"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vDatepickerI18n"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-class type="Ng2vDateParserFormatter"></ng2vd-api-docs-class>
-      <ng2vd-api-docs-config type="Ng2vDatepickerConfig"></ng2vd-api-docs-config>
+      
       <ng2vd-example-box demoTitle="Basic datepicker" [snippets]="snippets" component="datepicker" demo="basic">
         <ng2vd-datepicker-basic></ng2vd-datepicker-basic>
       </ng2vd-example-box>
@@ -37,6 +30,16 @@ import {DEMO_SNIPPETS} from './demos';
       <ng2vd-example-box demoTitle="Global configuration of datepickers" [snippets]="snippets" component="datepicker" demo="config">
         <ng2vd-datepicker-config></ng2vd-datepicker-config>
       </ng2vd-example-box>
+
+      <ng2vd-api-docs directive="Ng2vDatepicker"></ng2vd-api-docs>
+      <ng2vd-api-docs directive="Ng2vInputDatepicker"></ng2vd-api-docs>
+      <ng2vd-api-docs-class type="Ng2vDateStruct"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="DayTemplateContext"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vDatepickerNavigateEvent"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vDatepickerI18n"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-class type="Ng2vDateParserFormatter"></ng2vd-api-docs-class>
+      <ng2vd-api-docs-config type="Ng2vDatepickerConfig"></ng2vd-api-docs-config>
+      
     </ng2vd-content-wrapper>
   `
 })
