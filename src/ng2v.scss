@@ -400,7 +400,7 @@ Expects this html (note the required attribute on the input):
     }
   }
 
-  &.material-form-field-invalid{
+  &.material-form-field-invalid {
     color: $material-form-field-invalid-foreground;
     &::after{
       content:attr(data-validationError);
