@@ -17,6 +17,9 @@ const NG2V_SIDEMENU_DIRECTIVES = [Ng2vSideMenuComponent];
 })
 export class Ng2vSidemenuModule {
   static forRoot(): ModuleWithProviders { 
-    return { ngModule: Ng2vSidemenuModule, providers: [Ng2vSidemenuConfig] }; 
+    return { 
+      ngModule: Ng2vSidemenuModule, 
+      providers: [Ng2vSidemenuConfig] 
+    }; 
   }
 }
