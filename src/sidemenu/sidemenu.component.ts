@@ -4,7 +4,7 @@
  * @copyright: (c) 2016 Kanerika Software Pvt. Ltd. 
  * @website  : https://www.docnme.com/ 
  */
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ng2vSidemenuConfig } from './sidemenu.config';
 
@@ -25,7 +25,7 @@ import { Ng2vSidemenuConfig } from './sidemenu.config';
                     <div class="menu__label"><span>Veraction</span></div> 
                     </div>
                 </li>
-                <li class="group__item" *ngFor="let menu of menus"> 
+                <li class="group__item" *ngFor="let menu of menus" (click)="itemClick(menu)"> 
                     <div class="menu" (click)="toggleSubMenu(menu)">
                     <div class="menu__logo"><i class="fa {{menu.icon}}" area-hidden="true"></i></div>
                     <div class="menu__label"><span>{{menu.label}}</span></div>
@@ -36,8 +36,8 @@ import { Ng2vSidemenuConfig } from './sidemenu.config';
                         }"></i></div>
                     </div>
                     <ul class="sub-menu" [class.open]="menu.isExpanded">
-                        <li class="sub-menu__item" *ngFor="let sb of menu.subMenus">
-                        <a class="sub-link">{{sb.label}}</a>
+                        <li class="sub-menu__item" *ngFor="let sb of menu.subMenus" (click)="itemClick(sb)">
+                            <a class="sub-link">{{sb.label}}</a>
                         </li>
                     </ul>
                 </li>
@@ -55,11 +55,8 @@ export class Ng2vSideMenuComponent {
 
     @Input() menus: Array<any> = [];
     @Input() styles: any = {};
-
-    constructor(
-        private cd: ChangeDetectorRef,
-        private router: Router,
-        private config: Ng2vSidemenuConfig) {
+ 
+    constructor(private config: Ng2vSidemenuConfig) {
 
         this.menus = this.config.menus;
         this.styles = this.config.styles;
@@ -78,18 +75,16 @@ export class Ng2vSideMenuComponent {
         }
     }
 
-    toggleSubMenu( eachMenu ) {
-        let index = this.menus.indexOf(eachMenu);
-        this.menus[index].isExpanded = !eachMenu.isExpanded;
+    toggleSubMenu( menu ) {
+        let index = this.menus.indexOf(menu);
+        this.menus[index].isExpanded = !menu.isExpanded;
+    }
 
-        if ( !eachMenu.href ) {
-            return;
-        }
-
-        if ( /^(http|https::\/\/)/.test(eachMenu.href)) {
-            window.location.href = eachMenu.href;
-        } else {
-            this.router.navigate([eachMenu.href]);
+    itemClick( menu ) {
+        if ( this._isFunction(menu.callback) ) {
+            let data = Object.assign({}, menu);
+            delete data.callback;
+            menu.callback(data);
         }
     }
 
@@ -105,5 +100,9 @@ export class Ng2vSideMenuComponent {
         .filter(a => !isNaN(a)));
 
         return maxZIndex;
+    }
+
+    _isFunction( obj ) {
+        return !!(obj && obj.constructor && obj.call && obj.apply);
     }
 }
